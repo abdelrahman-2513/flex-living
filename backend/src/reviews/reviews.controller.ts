@@ -9,6 +9,8 @@ import {
 } from '@nestjs/common';
 import { ReviewsService } from './reviews.service';
 import { UpdateReviewDto } from './dto/update-review.dto';
+import { Public } from 'src/auth/decorators';
+import { GetReviewsDto } from './dto/get-reviews.dto';
 
 @Controller('api/reviews')
 export class ReviewsController {
@@ -16,27 +18,25 @@ export class ReviewsController {
 
   @Get('hostaway')
   async getHostawayReviews(
-    @Query('channel') channel?: string,
-    @Query('rating') rating?: string,
-    @Query('startDate') startDate?: string,
-    @Query('endDate') endDate?: string,
-    @Query('listingName') listingName?: string,
+    @Query() query: GetReviewsDto,
   ) {
     const filters = {
-      channel,
-      rating: rating ? parseFloat(rating) : undefined,
-      startDate,
-      endDate,
-      listingName,
+      channel: query.channel  ,
+      rating: query.rating ? parseFloat(`${query.rating}`) : undefined,
+      startDate: query.startDate,
+      endDate: query.endDate,
+      listingName: query.listingName,
     };
     return this.reviewsService.getHostawayReviews(filters);
   }
 
+  @Public()
   @Get('listings')
   async getListings() {
     return this.reviewsService.getUniqueListings();
   }
 
+  @Public()
   @Get('channels')
   async getChannels() {
     return this.reviewsService.getUniqueChannels();
@@ -53,14 +53,14 @@ export class ReviewsController {
     );
   }
 
+  @Public()
   @Get('public')
   async getPublicReviews(
-    @Query('listingName') listingName?: string,
-    @Query('limit') limit?: string,
+    @Query() query: GetReviewsDto,
   ) {
     return this.reviewsService.getPublicReviews(
-      listingName,
-      limit ? parseInt(limit) : undefined,
+      query.listingName,
+      query.limit ? parseInt(`${query.limit}`) : undefined,
     );
   }
 }
