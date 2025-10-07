@@ -20,8 +20,8 @@ export class HostawayService {
     private readonly configService: ConfigService,
   ) {
     this.hostawayApiUrl = this.configService.get<string>('hostaway.apiUrl') || 'https://api.hostaway.com/v1';
-    this.accountId = this.configService.get<string>('hostaway.accountId') || '61148';
-    this.apiKey = this.configService.get<string>('hostaway.apiKey') || 'f94377ebbbb479490bb3ec364649168dc443dda2e4830facaf5de2e74ccc9152';
+    this.accountId = this.configService.get<string>('hostaway.accountId') || 'your-account-id';
+    this.apiKey = this.configService.get<string>('hostaway.apiKey') || 'your-api-key';
   }
 
   async fetchReviews(): Promise<NormalizedReview[]> {
