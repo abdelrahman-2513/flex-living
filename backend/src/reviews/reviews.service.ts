@@ -39,17 +39,27 @@ export class ReviewsService {
     }
 
     if (filters?.startDate) {
+      // Parse start date and set to beginning of day (00:00:00)
       const startDate = new Date(filters.startDate);
-      filteredReviews = filteredReviews.filter(
-        (review) => new Date(review.submittedAt) >= startDate,
-      );
+      startDate.setHours(0, 0, 0, 0);
+      console.log(filters.startDate);
+      console.log(startDate);
+      filteredReviews = filteredReviews.filter((review) => {
+        const reviewDate = new Date(review.submittedAt);
+        return reviewDate >= startDate;
+      });
     }
 
     if (filters?.endDate) {
+      // Parse end date and set to end of day (23:59:59)
       const endDate = new Date(filters.endDate);
-      filteredReviews = filteredReviews.filter(
-        (review) => new Date(review.submittedAt) <= endDate,
-      );
+      endDate.setHours(23, 59, 59, 999);
+      console.log(endDate);
+      
+      filteredReviews = filteredReviews.filter((review) => {
+        const reviewDate = new Date(review.submittedAt);
+        return reviewDate <= endDate;
+      });
     }
 
     if (filters?.listingName) {
