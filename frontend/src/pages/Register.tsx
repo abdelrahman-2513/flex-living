@@ -98,15 +98,15 @@ export const Register: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#F8F8F8] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
-          <div className="mx-auto h-16 w-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-xl">
+          <div className="mx-auto h-16 w-16 bg-[#2F5C54] rounded-2xl flex items-center justify-center shadow-lg">
             <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
             </svg>
           </div>
-          <h2 className="mt-6 text-3xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <h2 className="mt-6 text-3xl font-semibold text-[#333333]">
             Create Account
           </h2>
           <p className="mt-2 text-sm text-gray-600">
@@ -114,10 +114,10 @@ export const Register: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-purple-100">
+        <div className="bg-[#FDFBF5] rounded-2xl shadow-lg p-8 border border-gray-200">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-2">
+              <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-2 w-fit">
                 Full Name
               </label>
               <input
@@ -127,8 +127,8 @@ export const Register: React.FC = () => {
                 autoComplete="name"
                 value={formData.name}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all ${
-                  errors.name ? 'border-red-300' : 'border-purple-200'
+                className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2F5C54] focus:border-transparent transition-all ${
+                  errors.name ? 'border-red-300' : 'border-gray-200'
                 }`}
                 placeholder="Enter your full name"
               />
@@ -138,7 +138,7 @@ export const Register: React.FC = () => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-2 w-fit">
                 Email Address
               </label>
               <input
@@ -148,8 +148,8 @@ export const Register: React.FC = () => {
                 autoComplete="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all ${
-                  errors.email ? 'border-red-300' : 'border-purple-200'
+                className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2F5C54] focus:border-transparent transition-all ${
+                  errors.email ? 'border-red-300' : 'border-gray-200'
                 }`}
                 placeholder="Enter your email"
               />
@@ -159,7 +159,7 @@ export const Register: React.FC = () => {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-bold text-gray-700 mb-2">
+              <label htmlFor="password" className="block text-sm font-bold text-gray-700 mb-2 w-fit">
                 Password
               </label>
               <input
@@ -169,8 +169,8 @@ export const Register: React.FC = () => {
                 autoComplete="new-password"
                 value={formData.password}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all ${
-                  errors.password ? 'border-red-300' : 'border-purple-200'
+                className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2F5C54] focus:border-transparent transition-all ${
+                  errors.password ? 'border-red-300' : 'border-gray-200'
                 }`}
                 placeholder="Create a password"
               />
@@ -180,7 +180,7 @@ export const Register: React.FC = () => {
             </div>
 
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-bold text-gray-700 mb-2">
+              <label htmlFor="confirmPassword" className="block text-sm font-bold text-gray-700 mb-2 w-fit">
                 Confirm Password
               </label>
               <input
@@ -190,8 +190,8 @@ export const Register: React.FC = () => {
                 autoComplete="new-password"
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all ${
-                  errors.confirmPassword ? 'border-red-300' : 'border-purple-200'
+                className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2F5C54] focus:border-transparent transition-all ${
+                  errors.confirmPassword ? 'border-red-300' : 'border-gray-200'
                 }`}
                 placeholder="Confirm your password"
               />
@@ -204,7 +204,7 @@ export const Register: React.FC = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-bold rounded-xl text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-[#2F5C54] hover:bg-[#4A7C70] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2F5C54] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-md hover:shadow-lg"
               >
                 {isLoading ? (
                   <div className="flex items-center">
@@ -220,7 +220,7 @@ export const Register: React.FC = () => {
             <div className="text-center">
               <p className="text-sm text-gray-600">
                 Already have an account?{' '}
-                <Link to="/login" className="font-medium text-purple-600 hover:text-purple-500 transition-colors">
+                <Link to="/login" className="font-medium text-[#2F5C54] hover:text-[#4A7C70] transition-colors">
                   Sign in here
                 </Link>
               </p>
