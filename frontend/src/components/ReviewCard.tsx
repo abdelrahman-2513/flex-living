@@ -19,17 +19,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
     });
   };
 
-  const getRatingColor = (rating: number) => {
-    if (rating >= 9) return 'from-green-500 to-emerald-600';
-    if (rating >= 7) return 'from-yellow-500 to-orange-500';
-    return 'from-red-500 to-pink-600';
-  };
-
-  const getRatingBg = (rating: number) => {
-    if (rating >= 9) return 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-200';
-    if (rating >= 7) return 'bg-gradient-to-br from-yellow-50 to-orange-50 border-yellow-200';
-    return 'bg-gradient-to-br from-red-50 to-pink-50 border-red-200';
-  };
 
   return (
     <div className="group bg-[#FDFBF5] rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 animate-fadeIn">
