@@ -13,7 +13,7 @@ import { Public } from '../auth/decorators';
 import { GetReviewsDto } from './dto/get-reviews.dto';
 import { ResponseDto } from '../shared/dtos/respone.dto';
 import {  NormalizedReview } from './interfaces/review.interface';
-import { EResponse } from 'src/shared/enums/response.enum';
+import { EResponse } from '../shared/enums/response.enum';
 
 @Controller('api/reviews')
 export class ReviewsController {
