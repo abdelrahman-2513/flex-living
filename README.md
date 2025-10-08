@@ -215,3 +215,7 @@ Currently using in-memory storage for review visibility settings. Data resets on
 
 **Built with ❤️ for Flex Living**
 
+### Access the Application
+
+- **Manager Dashboard**: https://flex-living-s2u1.vercel.app
+- **Public Reviews Page**: https://flex-living-s2u1.vercel.app/reviews
