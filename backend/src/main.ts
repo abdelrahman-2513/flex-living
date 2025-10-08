@@ -12,12 +12,10 @@ async function bootstrap() {
   const corsOrigins = configService.get<string[]>('cors.origins');
   app.use(helmet());
   app.enableCors({
-    origin: corsOrigins,
-    methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Accept', 'Authorization'],
+    origin: true, 
+    methods: 'GET,POST,PATCH,DELETE,OPTIONS', 
+    allowedHeaders: 'Content-Type, Accept, Authorization',
     credentials: true,
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
   });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
   
