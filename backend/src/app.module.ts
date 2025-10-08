@@ -26,7 +26,9 @@ import { TransformInterceptor } from './shared/transformers/transformer.intercep
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
-        uri: configService.get('DATABASE_URL'),
+        uri: configService.get('database.uri'),
+        retryAttempts: 3,
+        retryDelay: 1000,
       }),
     }),
     ReviewsModule,
