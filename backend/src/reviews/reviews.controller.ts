@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { ReviewsService } from './reviews.service';
 import { UpdateReviewDto } from './dto/update-review.dto';
-import { Public } from 'src/auth/decorators';
+import { Public } from '../auth/decorators';
 import { GetReviewsDto } from './dto/get-reviews.dto';
 import { ResponseDto } from '../shared/dtos/respone.dto';
 import {  NormalizedReview } from './interfaces/review.interface';
